@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Sailu Papa</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+      text-align: center;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .heart {
+      font-size: 20px;
+      line-height: 24px;
+      color: #ff416c;
+      text-shadow: 0 0 10px #ff416c, 0 0 20px #ff416c;
+      animation: glow 1s infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #ff416c, 0 0 20px #ff416c, 0 0 30px #ff416c;
+      }
+      to {
+        text-shadow: 0 0 20px #ff4b7d, 0 0 30px #ff4b7d, 0 0 40px #ff4b7d;
+      }
+    }
+
+    .message {
+      font-size: 2rem;
+      margin-top: 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .name {
+      font-size: 3rem;
+      color: #f7d794;
+      margin-top: 20px;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .countdown {
+      font-size: 1.5rem;
+      margin-top: 30px;
+      color: #fce38a;
+    }
+  </style>
+</head>
+<body>
+  <div class="heart">💖💖💖</div>
+  <div class="message">Happy Advance Birthday to the Amazing</div>
+  <div class="name">SAILU PAPA 🎉</div>
+  <div class="countdown" id="countdown"></div>
+
+  <script>
+    function countdownToBirthday() {
+      const birthday = new Date("2024-11-29T00:00:00");
+      const now = new Date();
+      const timeLeft = birthday - now;
+
+      if (timeLeft > 0) {
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
+        const seconds = Math.floor((timeLeft / 1000) % 60);
+        document.getElementById("countdown").innerText = 
+          `⏳ ${days} Days ${hours} Hours ${minutes} Minutes ${seconds} Seconds Left!`;
+      } else {
+        document.getElementById("countdown").innerText = "🎂 It's her Birthday! 🎂";
+      }
+    }
+
+    setInterval(countdownToBirthday, 1000);
+  </script>
+</body>
+</html>
